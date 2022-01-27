@@ -2,12 +2,14 @@ FROM gitpod/workspace-full-vnc
 SHELL ["/bin/bash", "-c"]
 
 ENV ANDROID_HOME=/home/gitpod/androidsdk \
-    FLUTTER_VERSION=2.2.3-stable
+    FLUTTER_VERSION=2.2.3-stable \
+    APPETIZE_API_TOKEN="tok_fbjp9yjfw6k082ctqj2ktu1bd0"
 
 # Install dart
 USER root
 RUN curl -fsSL https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && curl -fsSL https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list \
+    && curl -fsSL https://storage.googleapi
+    s.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list \
     && install-packages build-essential dart libkrb5-dev gcc make gradle android-tools-adb android-tools-fastboot
 
 # Install flutter
